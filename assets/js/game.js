@@ -11,15 +11,15 @@ const context = canvas.getContext('2d')
 
 var score, highscore, settings, grid, last_grid
 
+// Opens links in new tab
+$("a").each(function () {
+    $(this).attr('target', '_blank')
+    $(this).attr('rel', 'noopener noreferrer')
+})
+
 initGame()
 
 function initGame() {
-    // Opens links in new tab
-    $("a").each(function () {
-        $(this).attr('target', '_blank')
-        $(this).attr('rel', 'noopener noreferrer')
-    })
-
     $.getJSON("/assets/json/settings.json", function (json) {
         score = 0
         highscore = 0
@@ -381,5 +381,11 @@ back_button.onclick = function () {
 }
 
 restart_button.onclick = function () {
-    console.log("restart")
+    grid = initGrid(settings.grid_size.classic)
+    last_grid = null
+    back_button.disabled = true
+    for (var k = 0; k < settings.grid_size.classic / 2; k++) {
+        generateRandomCell()
+    }
+    drawGrid()
 }
