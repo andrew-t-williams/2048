@@ -1,0 +1,25 @@
+{
+    "grid_background": "#b9a78e",
+    "grid_size": {
+        "classic": 4,
+        "big": 5,
+        "huge": 8
+    },
+    "cell_colour": {
+        "null": "#d5cbc6",
+        "2": "#ede3da",
+        "4": "#eddfc8",
+        "8": "#f1b178",
+        "16": "#f59562",
+        "32": "#f57c5f",
+        "64": "#f55e3a",
+        "128": "#edcf73",
+        "256": "#edcc61",
+        "512": "#edc750",
+        "1024": "#edc43f",
+        "2048": "#edc22d"
+    },
+    "cell_spacing": 8,
+    "curve_radius": 5,
+    "probability_of_four": 10
+}
