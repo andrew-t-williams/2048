@@ -1,8 +1,7 @@
 # 2048
 
-### Algorithm on key-press
-The technique is the same for each direction, so we will only look at moving up.
-
+### Algorithm on key-press:
+```
 Each move, the game must take the following steps:
     If a move in that direction is possible:
         Collapse each column in that direction
@@ -21,3 +20,4 @@ Each move, the game must take the following steps:
             Random pos, normally a 2, but 1 in 10 is a 4.
         Check if game is over
     Else, do nothing.
+```
