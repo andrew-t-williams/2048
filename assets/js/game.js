@@ -1,12 +1,15 @@
 
 const score_indicator = document.getElementById("score")
 const highscore_indicator = document.getElementById("highscore")
-const moves_indicator = document.getElementById("moves")
+
+const settings_button = document.getElementById("settings")
+const back_button = document.getElementById("back")
+const restart_button = document.getElementById("restart")
 
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d')
 
-var score, highscore, settings, grid
+var score, highscore, settings, grid, last_grid
 
 initGame()
 
@@ -70,11 +73,24 @@ function checkKey(e) {
         direction = 'right'
     }
     if (canMove(direction)) {
+        back_button.disabled = false
+        last_grid = copyGrid(grid)
         collapseGrid(direction)
         generateRandomCell()
         drawGrid()
         checkDeath()
     }
+}
+
+function copyGrid(grid) {
+    var columns = new Array(grid.length)
+    for (var i = 0; i < grid.length; i++) {
+        columns[i] = new Array(grid.length)
+        for (var j = 0; j < grid.length; j++) {
+            columns[i][j] = grid[i][j]
+        }
+    }
+    return columns;
 }
 
 function canMove(direction) {
@@ -350,5 +366,20 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
     if (stroke) {
         ctx.stroke();
     }
+}
 
+settings_button.onclick = function () {
+    console.log("settings")
+}
+
+back_button.onclick = function () {
+    if (last_grid) {
+        grid = last_grid
+        drawGrid()
+        back_button.disabled = true
+    }
+}
+
+restart_button.onclick = function () {
+    console.log("restart")
 }

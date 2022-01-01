@@ -39,7 +39,6 @@ body {
     width: 60px;
     border-radius: 10px;
     border: 0;
-    cursor: pointer;
 }
 
 .iconify {
@@ -47,8 +46,9 @@ body {
     height: 100%;
 }
 
-.buttons:hover {
+.buttons:hover:enabled {
     background-color: #9b9b9b;
+    cursor: pointer;
 }
 
 .buttons .game_buttons {
