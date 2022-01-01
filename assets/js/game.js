@@ -3,10 +3,12 @@ const score_indicator = document.getElementById("score")
 const highscore_indicator = document.getElementById("highscore")
 
 const settings_button = document.getElementById("settings")
+const settings_modal = document.getElementById("settings_modal")
+const settings_close_span = document.getElementsByClassName("close")[0]
 const back_button = document.getElementById("back")
 const restart_button = document.getElementById("restart")
 
-const canvas = document.getElementById('game');
+const canvas = document.getElementById('game')
 const context = canvas.getContext('2d')
 
 var score, highscore, settings, grid, last_grid
@@ -369,7 +371,17 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
 }
 
 settings_button.onclick = function () {
-    console.log("settings")
+    settings_modal.style.display = "block";
+}
+
+settings_close_span.onclick = function () {
+    settings_modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == settings_modal) {
+        settings_modal.style.display = "none";
+    }
 }
 
 back_button.onclick = function () {
