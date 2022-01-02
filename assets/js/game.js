@@ -2,9 +2,11 @@
 const score_indicator = document.getElementById("score")
 const highscore_indicator = document.getElementById("highscore")
 
-const settings_button = document.getElementById("settings")
 const settings_modal = document.getElementById("settings_modal")
-const settings_close_span = document.getElementsByClassName("close")[0]
+const game_over_modal = document.getElementById("game_over_modal")
+const close_span = document.getElementsByClassName("close")[0]
+
+const settings_button = document.getElementById("settings")
 const back_button = document.getElementById("back")
 const restart_button = document.getElementById("restart")
 
@@ -296,7 +298,7 @@ function checkDeath() {
     if (canMove('up') || canMove('down') || canMove('right') || canMove('left')) {
         return
     } else {
-        document.getElementById('game_over').style.display = "block";
+        game_over_modal.style.display = "block";
     }
 }
 
@@ -374,8 +376,9 @@ settings_button.onclick = function () {
     settings_modal.style.display = "block";
 }
 
-settings_close_span.onclick = function () {
+close_span.onclick = function () {
     settings_modal.style.display = "none";
+    game_over_modal.style.display = "none";
 }
 
 window.onclick = function (event) {

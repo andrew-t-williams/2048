@@ -7,16 +7,12 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Chart.js -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
     <!-- Iconify -->
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 
 <body>
     <div class="main_content">
-        <!-- Game over -->
-        <div id="game_over" class="game_over">Game Over 💀</div>
         <!-- Info Dashboard -->
         <div class="game_dash">
             <div style="height: 145px;">
@@ -44,9 +40,8 @@
         <canvas id="game" width="400" height="400" class="game_canvas"></canvas>
         <!-- Credits -->
         <small class="credits">
-            Made by Andrew Williams -
+            <a href="https://github.com/andrew-t-williams/2048">Code</a> -
             <a href="https://github.com/andrew-t-williams">My GitHub</a> -
-            <a href="https://github.com/andrew-t-williams/2048">2048 Code</a> -
             <a href="https://andrew-williams.dev">My Website</a>
         </small>
 
@@ -54,9 +49,21 @@
         <div id="settings_modal" class="modal">
 
             <!-- Modal content -->
-            <div class="settings_modal_content">
+            <div class="modal_content">
                 <span class="close">&times;</span>
                 <p>Settings</p>
+            </div>
+
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="game_over_modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal_content">
+                <span class="close">&times;</span>
+                <p>Game Over 💀</p>
+                <!-- <div class="game_over">Game Over 💀</div> -->
             </div>
 
         </div>
